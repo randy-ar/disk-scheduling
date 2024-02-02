@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Disk Scheduling | Sistem Operasi</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> 
@@ -77,9 +77,9 @@
         </div>
       </div>
     </div>
-    <hr>
+    <hr class="mb-5">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8 mb-3">
+      <div class="col-12 col-md-8 mb-5">
         <canvas id="chart"></canvas>
       </div>
     </div>
@@ -415,9 +415,7 @@
 
     function addInput() {
       inputForm = $('#input-data');
-
       nInput += 1;
-
       inputForm.append( `
         <div class="mb-3">
           <label class="mb-2">Data ke-${nInput}</label>
@@ -456,6 +454,7 @@
     }
 
     function resetData() {
+      nInput = 0;
       $('#input-data').html('');
       addInput();
       $('#head-position').val('');
@@ -472,7 +471,7 @@
 
       head_data = $('#head-position').val();
       if(head_data != ''){
-        head_initial = head_data;
+        head_initial = parseInt(head_data);
       }else{
         head_initial = 100;
       }
@@ -508,7 +507,7 @@
         datasets.push({
           label: "SSTF",
           data: sstf_dataset,
-          borderColor: 'rgb(175, 192, 192)',
+          borderColor: 'rgb(192, 75, 75)',
         });
       }
       if($('#scan-state')[0].checked){
@@ -516,7 +515,7 @@
         datasets.push({
           label: "SCAN",
           data: scan_dataset,
-          borderColor: 'rgb(75, 92, 92)',
+          borderColor: 'rgb(75, 75, 192)',
         });
       }
       if($('#cscan-state')[0].checked){
@@ -524,7 +523,7 @@
         datasets.push({
           label: "C-SCAN",
           data:  cscan_dataset,
-          borderColor: 'rgb(192, 72, 192)',
+          borderColor: 'rgb(192, 75, 192)',
         });
       }
 
@@ -539,5 +538,5 @@
   </script>
 </body>
 </html>
-
+<!-- [55, 58, 39, 18, 90, 160, 150, 38,	184] -->
 <!-- hasil yang saya dapatkan [90, 58, 55, 150, 160, 39, 38, 18, 184] hasil yang saya inginkan [39, 38, 18, 55, 58, 90 150, 160, 184] -->
