@@ -16,7 +16,7 @@ Menu Kontrol:
 
 Input Data:
 - Klik Input Data.
-- Masukan posisi head apa input Head Position.
+- Masukan posisi head pada input Head Position.
 - Masukan data track pertama.
 - Klik Tambah Data untuk menambah data track selanjutnya.
 - Klik Hapus Data untuk menghapus data track paling akhir.
